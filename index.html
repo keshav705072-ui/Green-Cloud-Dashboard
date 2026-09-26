@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Cloud Architecture Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🌱 Green Computing & Cloud Dashboard</h1>
+        <p>Sustainable Architecture Optimization (AZ-204 & Paper Concepts)</p>
+    </header>
+
+    <div class="container">
+        <!-- Module 1: Autoscaling & Right-sizing -->
+        <div class="card">
+            <h2>1. Resource Right-Sizing & Autoscaling</h2>
+            <p>Simulate CPU traffic to scale instances dynamically.</p>
+            <label for="cpuSlider">Current CPU Load: <span id="cpuVal">20</span>%</label>
+            <input type="range" id="cpuSlider" min="0" max="100" value="20" oninput="updateScaling()">
+            
+            <div class="status-box">
+                Active Instances: <b id="instanceCount">1 Instance</b>
+            </div>
+        </div>
+
+        <!-- Module 2: Carbon-Aware Workload Scheduling -->
+        <div class="card">
+            <h2>2. Carbon-Aware Workload Scheduler</h2>
+            <p>Shift non-urgent batch jobs to low-carbon intensity periods.</p>
+            <button onclick="scheduleJob()">Run Background Data Backup</button>
+            <div class="status-box" id="carbonStatus">
+                Status: Waiting for action...
+            </div>
+        </div>
+
+        <!-- Module 3: Storage Lifecycle Policy -->
+        <div class="card">
+            <h2>3. Storage Lifecycle Management</h2>
+            <p>Automatically transition older unused data to reduce energy footprint.</p>
+            <button onclick="runLifecycle()">Clean & Archive Unused Data</button>
+            <div class="status-box" id="storageStatus">
+                Storage State: Hot Tier Active
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
