@@ -4,14 +4,18 @@ function updateScaling() {
     document.getElementById("cpuVal").innerText = cpu;
     let countText = document.getElementById("instanceCount");
 
-    if (cpu < 30) {
+     if (cpu < 25) {
         countText.innerText = "1 Server Instance (Scale In - Low Power)";
-    } else if (cpu >= 30 && cpu < 70) {
+    } else if (cpu >= 25 && cpu < 50) {
         countText.innerText = "2 Server Instances (Normal Balance)";
-    } else {
+    } else if (cpu >= 50 && cpu <75) {
+        countText.innerText = "3 Server Instances (Medium Traffic load)";
+    }
+     else {
         countText.innerText = "4 Server Instances (Scale Out - High Traffic)";
     }
 }
+
 
 // 2. Carbon-Aware Workload Scheduling Logic (Paper Concept: Section IV.4)
 function scheduleJob() {
